@@ -1,0 +1,22 @@
+<h1>Artigos</h1>
+
+<table>
+  <tr>
+    <th>Título</th>
+    <th>Texto</th>
+    <th colspan="2"></th>
+    <th><%= link_to 'Novo Artigo', new_article_path %></th>
+  </tr>
+
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.title %></td>
+      <td><%= article.text %></td>
+      <td><%= link_to 'Ver Artigo', article_path(article) %></td>
+      <td><%= link_to 'Editar', edit_article_path(article) %></td>
+      <td><%= link_to 'Deletar', article_path(article),
+              method: :delete,
+              data: { confirm: 'Você Tem Certeza ?'} %></td>
+    </tr>
+  <% end %>
+</table>
