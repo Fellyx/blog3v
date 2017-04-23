@@ -1,2 +1,17 @@
-<h1>Blog 3 Versão</h1>
+<h1 align="center">Blog 3 Versão</h1>
+
+
+<% if !user_signed_in? %>
+  <p align="right">
+    <%= link_to "Cadastrar Usuário", new_user_registration_path %>
+    &nbsp
+    <%= link_to "Logar", new_user_session_path %>
+  </p>
+<% else %>
+  <p align="right">
+    Olá,&nbsp<%= current_user.email %>.
+    <%= link_to "Sair  ", destroy_user_session_path, method: :delete %>
+  </p>
+<% end %>
+
 <p><%= link_to 'Artigos', controller: 'articles' %></p>

@@ -1,5 +1,11 @@
-<h1>Artigos</h1>
+<h1 align="center">Artigos</h1>
 
+<p align="right">
+  <% if user_signed_in? %>
+    Olá,&nbsp<%= current_user.email %>.
+    <%= link_to "Sair  ", destroy_user_session_path, method: :delete %>
+  <% end %>
+</p>
 <table>
   <tr>
     <th>Título</th>
@@ -13,10 +19,12 @@
       <td><%= article.title %></td>
       <td><%= article.text %></td>
       <td><%= link_to 'Ver Artigo', article_path(article) %></td>
-      <td><%= link_to 'Editar', edit_article_path(article) %></td>
-      <td><%= link_to 'Deletar', article_path(article),
-              method: :delete,
-              data: { confirm: 'Você Tem Certeza ?'} %></td>
+      <% if user_signed_in? %>
+        <td><%= link_to 'Editar', edit_article_path(article) %></td>
+        <td><%= link_to 'Deletar', article_path(article),
+                method: :delete,
+                data: { confirm: 'Você Tem Certeza ?'} %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>

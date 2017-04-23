@@ -10,8 +10,10 @@
   <strong>-----------------------------</strong><br />
 </p>
 
-<p>
-  <%= link_to 'Deletar Comentário', [comment.article, comment],
-              method: :delete,
-              data: { confirm: 'Você tem Certeza ?'} %>
-</p>
+<% if user_signed_in? %>
+  <p>
+    <%= link_to 'Deletar Comentário', [comment.article, comment],
+                method: :delete,
+                data: { confirm: 'Você tem Certeza ?'} %>
+  </p>
+<% end %>
