@@ -1,0 +1,24 @@
+<h1 align="center">Controle De Usuários</h1><br />
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Função</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <% if user.role == "normal_user" %>
+          <td><%= "Usuário Comum." %></td>
+        <% else %>
+          <td><%= "Administrador." %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -3,14 +3,15 @@
 
 <% if !user_signed_in? %>
   <p align="right">
-    <%= link_to "Cadastrar Usuário", new_user_registration_path %>
+    <%= link_to 'Cadastrar Usuário', new_user_registration_path %>
     &nbsp
-    <%= link_to "Logar", new_user_session_path %>
+    <%= link_to 'Logar', new_user_session_path %>
   </p>
 <% else %>
   <p align="right">
     Olá,&nbsp<%= current_user.email %>.
-    <%= link_to "Sair  ", destroy_user_session_path, method: :delete %>
+    <%= link_to 'Sair', destroy_user_session_path, method: :delete %>
+    <%= link_to 'Usuários', control_users_index_path %>
   </p>
 <% end %>
 
