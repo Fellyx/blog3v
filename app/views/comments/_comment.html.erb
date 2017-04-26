@@ -1,5 +1,10 @@
+<strong>-----------------------------</strong><br />
 <p>
-  <strong>-----------------------------</strong><br />
+  <strong>Foto Do Comentarista:</strong>
+  <%= image_tag(comment.avatar.thumb) if comment.avatar %>
+</p>
+
+<p>
   <strong>Comentarista:</strong>
   <%= comment.commenter %>
 </p>

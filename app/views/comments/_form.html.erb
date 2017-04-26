@@ -1,5 +1,9 @@
 <%= form_for([@article, @article.comments.build]) do |f| %>
   <p>
+    <%= f.label "Foto Do Comentarista" %>
+    <%= f.file_field :avatar %>    
+  </p>
+  <p>
     <%= f.label "Comentarista" %><br>
     <%= f.text_field :commenter %>
   </p>
