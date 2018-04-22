@@ -1,4 +1,4 @@
 # blog3v
-Blog (Rails, Ember,Bootstrap)
+Blog (Rails, Pundit,Devise,Bootstrap)
 
 Project created only for my study purposes.
